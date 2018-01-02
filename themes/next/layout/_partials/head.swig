@@ -1,6 +1,20 @@
 <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="{{ theme.android_chrome_color }}">
+
+{% if theme.pace %}
+  {% set pace_css_uri = url_for(theme.vendors._internal + '/pace/'+ theme.pace_theme +'.min.css?v=1.0.2') %}
+  {% set pace_js_uri = url_for(theme.vendors._internal + '/pace/pace.min.js?v=1.0.2') %}
+    {% if theme.vendors.pace %}
+      {% set pace_js_uri = theme.vendors.pace %}
+    {% endif %}
+    {% if theme.vendors.pace_css %}
+      {% set pace_css_uri = theme.vendors.pace_css %}
+    {% endif %}
+  <script src="{{ pace_js_uri }}"></script>
+  <link href="{{ pace_css_uri }}" rel="stylesheet">
+{% endif %}
 
 
 {% if theme.han %}
@@ -54,7 +68,7 @@
 <link href="{{ font_awesome_uri }}" rel="stylesheet" type="text/css" />
 
 <link href="{{ url_for(theme.css) }}/main.css?v={{ theme.version }}" rel="stylesheet" type="text/css" />
-
+<link href="https://cdn.rawgit.com/knsv/mermaid/7.0.0/dist/mermaid.css" rel="stylesheet" type="text/css" />
 {% if page.keywords %}
   <meta name="keywords" content="{{ page.keywords }}" />
 {% elif page.tags and page.tags.length %}
@@ -101,6 +115,7 @@
     scheme: '{{ theme.scheme }}',
     sidebar: {{ theme.sidebar | json_encode }},
     fancybox: {{ theme.fancybox }},
+    tabs: {{ theme.tabs.enable }},
     motion: {{ theme.use_motion }},
     duoshuo: {
       userId: '{{ theme.duoshuo_info.user_id | default() }}',
