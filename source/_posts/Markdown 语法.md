@@ -1,7 +1,7 @@
 ---
 title: Markdown 语法
 date: 2017-06-04 23:52:36
-categories: "MarkDown"
+categories: "Markdown"
 tags:
      - Markdown
      - PlantUML
