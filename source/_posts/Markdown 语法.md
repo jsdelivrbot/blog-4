@@ -16,18 +16,27 @@ Markdown 可以用于
 
 <!-- more -->
 
-
 ### 1. 制作一份待办事宜 [^Todo 列表]
 - [ ] 支持以 PDF 格式导出文稿
 - [ ] 改进 Cmd 渲染算法，使用局部渲染技术提高渲染效率
 - [x] 新增 Todo 列表功能
 - [x] 修复 LaTex 公式渲染问题
 - [x] 新增 LaTex 公式编号功能
+- [ ]todo list
+- [ ] bbs 维护
+- [ ] Desktop 发布新版
+    - [x] Markdown编辑器添加Todo list
+    - [x] 修复白屏问题
+    - [ ] 修复issue3
 
 ### 2. 书写一个质能守恒公式[^LaTeX]
-
 $$E=mc^2$$
 $$f(x,y,z)=3y^2z(3+\frac{7x+5}{1+y^2})$$
+$$\sum_{i=1}^n a_i=0$$
+
+$$f(x_1,x_x,\ldots,x_n) = x_1^2 + x_2^2 + \cdots + x_n^2 $$
+
+$$\sum^{j-1}{k=0}{\widehat{\gamma}{kj} z_k}$$
 ### 3. 高亮一段代码[^code]
 
 ```python
@@ -95,7 +104,7 @@ gantt
     Completed task            :done,    des1, 2014-01-06,2014-01-08
     Active task               :active,  des2, 2014-01-09, 3d
     Future task               :         des3, after des2, 5d
-    Future task2               :         des4, after des3, 5d
+    Future task2              :         des4, after des3, 5d
 
     section Critical tasks
     Completed task in the critical line :crit, done, 2014-01-06,24h
@@ -115,6 +124,20 @@ gantt
     Add gantt diagram to demo page      : 20h
     Add another diagram to demo page    : 48h
 {% endmermaid %}
+
+{% mermaid gantt 测试甘特图 %}
+gantt
+    dateFormat  YYYY-MM-DD
+    title 实时标签方案时间安排
+
+    时间安排 问题整理               :des1, 2018-01-29
+    了解现有的标签生产过程和数据来源   :des2, 2018-01-30, 2d
+    整理标签计算单元方案             :des3, after des2, 5d
+    分析Hbase Redis Api方案可行性   :des4, after des3, 5d
+
+
+{% endmermaid %}
+
 ### 7. PlantUML
 {% plantuml %}
     Bob->Alice : hello
