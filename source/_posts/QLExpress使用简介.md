@@ -29,7 +29,7 @@ max = a>b?a:b;
 ```
 * 关于对象，类，属性，方法的调用
 
-```
+```Java
 import com.ql.util.express.test.OrderQuery;
 //系统自动会import java.lang.*,import java.util.*;
 
@@ -44,7 +44,7 @@ System.out.println(result.getId());//静态方法
 
 * 自定义操作符号：addOperatorWithAlias+addOperator+addFunction
 
-```
+```java
 
 runner.addOperatorWithAlias("如果", "if",null);
 runner.addOperatorWithAlias("则", "then",null);
