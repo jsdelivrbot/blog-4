@@ -68,7 +68,7 @@
 <link href="{{ font_awesome_uri }}" rel="stylesheet" type="text/css" />
 
 <link href="{{ url_for(theme.css) }}/main.css?v={{ theme.version }}" rel="stylesheet" type="text/css" />
-<link href="https://cdn.rawgit.com/knsv/mermaid/7.0.0/dist/mermaid.css" rel="stylesheet" type="text/css" />
+<link href="https://cdn.jsdelivr.net/gh/knsv/mermaid@7.0.0/dist/mermaid.css" rel="stylesheet" type="text/css" />
 {% if page.keywords %}
   <meta name="keywords" content="{{ page.keywords }}" />
 {% elif page.tags and page.tags.length %}
